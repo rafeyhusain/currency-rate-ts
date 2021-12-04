@@ -9,7 +9,7 @@ function Search(): JSX.Element {
     setText(value);
   };
   
-  return <div className={classes.search}>Search
+  return <div className={classes.search}>Search&nbsp;
     <input value={text} onChange={handleChange} />
   </div>;
 }
