@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './App.module.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import RatesPage from './pages/RatesPage/RatesPage';
 
 function App(): JSX.Element {
@@ -8,7 +8,9 @@ function App(): JSX.Element {
   return (
     <Router>
       <div className={styles.App}>
-        <RatesPage></RatesPage>
+      <Switch>
+        <Route path="/:currency?" children={<RatesPage />} />
+      </Switch>
       </div>
     </Router>
   );

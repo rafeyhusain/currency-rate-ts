@@ -26,7 +26,7 @@ function Rate(item: IRate): JSX.Element {
       </div>
       <div>
         <div className="text-gray-700 text-right align-middle mr-5">
-          {item.exchangeRate && <span>{item.exchangeRate.buy ? item.exchangeRate.buy.toFixed(2) : '-'} EUR</span>}
+          {item.exchangeRate && <span>{item.exchangeRate.buy ? +item.exchangeRate.buy.toFixed(2) : 'NA'} EUR</span>}
         </div>
       </div>
     </div>

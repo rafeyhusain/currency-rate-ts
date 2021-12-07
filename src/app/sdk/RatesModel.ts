@@ -1,3 +1,5 @@
+import { Env } from "./Env";
+
 export interface ExchangeRate {
     buy: number;
     middle: number;
@@ -43,10 +45,8 @@ export class Rates implements IRates {
     }
 
     async get(): Promise<IRates> {
-        const url = "https://run.mocky.io/v3/c88db14a-3128-4fbd-af74-1371c5bb0343";
-        
         try {
-            const response = await fetch(url);
+            const response = await fetch(Env.API_URL);
             const rates: IRates = await response.json();
 
             return rates;

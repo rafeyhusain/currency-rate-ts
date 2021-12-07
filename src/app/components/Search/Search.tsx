@@ -18,7 +18,7 @@ function Search({onSearch}: SearchProps): JSX.Element {
   };
   
   return <div className={classes.search}>Search&nbsp;
-    <input value={text} onChange={handleChange} />
+    <input value={text} onChange={handleChange} placeholder=" e.g. USD" />
   </div>;
 }
 
