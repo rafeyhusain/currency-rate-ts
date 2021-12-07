@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classes from './Search.module.css';
 
-function Search(): JSX.Element {
+type OnSearch = (text: string) => void;
+
+type SearchProps = {
+  onSearch: OnSearch;
+};
+
+function Search({onSearch}: SearchProps): JSX.Element {
   const [text, setText] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    
     setText(value);
+    onSearch(value);
   };
   
   return <div className={classes.search}>Search&nbsp;

@@ -1,8 +1,12 @@
 import React from 'react';
 import classes from './Header.module.css';
 
-function Header(): JSX.Element {
-  return <div className={classes.header}>Currency Exchange</div>;
+function Header() {
+  return (
+    <header>
+      <div className={classes.header}>Currency Exchange</div>
+    </header>
+  );
 }
 
 export default Header;
