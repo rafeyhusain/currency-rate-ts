@@ -1,6 +1,22 @@
 # Introduction
 
-React, Jest, Vite, Tailwind CSS
+## Tech Stack
+
+React, Jest, Vite, Tailwind CSS, StoryBook
+
+## Getting Started
+
+To list all currencies:
+
+```html
+http://localhost:3001/
+```
+
+To list a single currency:
+
+```html
+http://localhost:3001/usd
+```
 
 ## Installing / Developing
 
@@ -30,12 +46,6 @@ npm run client:dev
 npm run storybook
 ```
 
-You can configure the server port by setting the `PORT` environment variable. Creating a `.env` file is supported. You can copy `.env.example` to `.env`.
-
-| KEY  | VALUE                                                         |
-| ---- | ------------------------------------------------------------- |
-| PORT | (Optional) Port for the server environment (defaults to 3001) |
-
 ## Building
 
 To build the project, run:
@@ -57,8 +67,14 @@ In production, you have a single server serving everything.
 
 ## Tests
 
-A test runner is not installed (right now). But TypeScript, linter and prettier are checked on commit and push thanks to husky and lintstaged.
+To run Jest tests:
 
-## Licensing
+```shell
+npm test
+```
 
-MIT
+Or in watch mode:
+
+```shell
+npm testw
+```

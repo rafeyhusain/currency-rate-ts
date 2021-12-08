@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './App.module.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RatesPage from './pages/RatesPage/RatesPage';
 
 function App(): JSX.Element {

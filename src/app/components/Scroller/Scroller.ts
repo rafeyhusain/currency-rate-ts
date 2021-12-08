@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-function Scroller(callback) {
+type ScrollerParam = (isHidden: boolean) => void;
+
+function Scroller(callback: ScrollerParam) {
   const [, setScrollPosition] = useState(0);
   let previousScrollTop = 0;
 

@@ -5,8 +5,9 @@ function Rate(item: IRate): JSX.Element {
   const url = `./src/app/assets/flags/${item.currency.substring(0, 2)}.png`;
 
   const handleFlagError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.target.onerror = null;
-    e.target.src = './src/app/assets/flags/naa.png';
+    const target = e.target as HTMLImageElement;
+    target.onerror = null;
+    target.src = './src/app/assets/flags/naa.png';
   }
 
   return <>

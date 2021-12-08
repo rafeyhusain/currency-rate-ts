@@ -7,14 +7,14 @@ import { IRate, Rates as RatesModel } from '../../sdk/RatesModel';
 import { useParams } from "react-router";
 
 function RatesPage(): JSX.Element {
-  const { currency } = useParams();
+  const { currency } = useParams<{currency: string}>();
   const [rates, setRates] = useState<IRate[]>([]);
   const [filtered, setFiltered] = useState<IRate[]>([]);
   const [hidden, setHidden] = useState(false);
 
   const filterData = async (text: string) => {
     const result = rates.filter(
-      (rate: IRate) => rate.currency.toLowerCase().indexOf(text) !== -1);
+      (rate: IRate) => rate.currency.toLowerCase().indexOf(text.toLowerCase()) !== -1);
 
     setFiltered(result);
   };
@@ -44,11 +44,11 @@ function RatesPage(): JSX.Element {
     setHidden(isHidden);
   });
 
-  let item;
+  let content;
   if (filtered.length > 0) {
-    item = <Rates item={filtered} />
+    content = <Rates item={filtered} />
   } else {
-    item = <h1>No matching currency found</h1>
+    content = <h1>No matching currency found</h1>
   }
 
   return <div className="flex flex-col bg-gray-200">
@@ -56,7 +56,7 @@ function RatesPage(): JSX.Element {
       <div className={hidden ? 'hidden' : 'block'}><Header /></div>
       <Search onSearch={onSearch} />
     </div>
-    {item}
+    {content}
   </div>;
 }
 
