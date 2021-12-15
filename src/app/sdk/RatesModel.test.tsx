@@ -26,7 +26,7 @@ test('Search USD should return 1 currency', () => {
 
   const sdkRate = new Rates();
 
-  const rates = sdkRate.filterRates(ratesData, 'USD');
+  const rates = sdkRate.filter(ratesData, 'USD');
 
   expect(rates.length).toBe(1);
 });
